@@ -1,0 +1,34 @@
+.nav {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f1f1f1;
+}
+
+.links a {
+    margin: 0 10px;
+    padding: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+    position: relative; /* Añade posición relativa para poder posicionar el pseudo-elemento */
+}
+
+.links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Altura de la barra */
+    background-color: #000;
+    transform: scaleX(0); /* Inicialmente, la barra no es visible */
+    transform-origin: 0% 0%;
+    transition: transform 0.3s ease-in-out; /* Agregar una transición para la animación */
+}
+
+.links a:hover::after {
+    transform: scaleX(1); /* Al hacer hover, la barra se expandirá */
+}
